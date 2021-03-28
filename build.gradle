@@ -3,7 +3,7 @@ plugins {
 }
 
 ext {
-    jenkinsVersion = '2.277.1'
+    jenkinsVersion = '2.263.4'
     jobDslVersion = '1.77'
 }
 
