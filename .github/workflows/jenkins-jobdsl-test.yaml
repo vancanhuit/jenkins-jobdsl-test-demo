@@ -17,3 +17,10 @@ jobs:
         env:
           DEFAULT_BRANCH: master
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Archive gradle test reports
+        uses: actions/upload-artifact@v2
+        with:
+          name: gradle-test-reports
+          path: build/reports/tests/
+          
+          
