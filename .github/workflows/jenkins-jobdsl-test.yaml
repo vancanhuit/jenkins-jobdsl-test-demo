@@ -17,3 +17,10 @@ jobs:
         env:
           DEFAULT_BRANCH: master
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - name: Archive test results
+        uses: actions/upload-artifact@v2
+        with:
+          name: Test result
+          path: build/reports/tests/test/index.html
+          
+          
