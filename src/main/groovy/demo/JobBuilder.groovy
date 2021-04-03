@@ -9,9 +9,15 @@ class JobBuilder {
         this.job = job
     }
 
-    void addDescription(String s) {
-        this.job.with {
+    void setDescription(String s) {
+        job.with {
             description(s)
+        }
+    }
+
+    void setConcurrentBuild(boolean allowConcurrentBuild) {
+        job.with {
+            concurrentBuild(allowConcurrentBuild)
         }
     }
 }

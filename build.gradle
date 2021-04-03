@@ -7,6 +7,17 @@ ext {
     jobDslVersion = '1.77'
 }
 
+sourceSets {
+    jobs {
+        groovy {
+            srcDirs 'jobs'
+            compileClasspath += main.compileClasspath
+        }
+        compileClasspath += sourceSets.main.output
+        runtimeClasspath += sourceSets.main.output
+    }
+}
+
 group 'org.example'
 version '1.0-SNAPSHOT'
 
