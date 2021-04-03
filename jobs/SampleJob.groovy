@@ -1,5 +1,5 @@
 import javaposse.jobdsl.dsl.jobs.FreeStyleJob
-import demo.JobBuilder
+import demo.builder.JobBuilder
 
 FreeStyleJob job = freeStyleJob('SampleJob')
 JobBuilder builder = new JobBuilder(job)

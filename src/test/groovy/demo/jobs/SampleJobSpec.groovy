@@ -1,6 +1,8 @@
-package demo
+package demo.jobs
 
 import javaposse.jobdsl.dsl.DslScriptLoader
+import javaposse.jobdsl.dsl.GeneratedItems
+import javaposse.jobdsl.dsl.GeneratedJob
 import javaposse.jobdsl.plugin.JenkinsJobManagement
 import org.junit.ClassRule
 import org.junit.rules.TemporaryFolder
@@ -23,9 +25,13 @@ class SampleJobSpec extends Specification {
         String script = new File('jobs/SampleJob.groovy').getText('UTF-8')
 
         when:
-        new DslScriptLoader(jobManagement).runScript(script)
+        GeneratedItems items = new DslScriptLoader(jobManagement).runScript(script)
 
         then:
         noExceptionThrown()
+        items.jobs.size() == 1
+        GeneratedJob generatedJob = items.jobs.first()
+        generatedJob != null
+        generatedJob.jobName == 'SampleJob'
     }
 }

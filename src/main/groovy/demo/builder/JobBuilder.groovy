@@ -1,4 +1,4 @@
-package demo
+package demo.builder
 
 import javaposse.jobdsl.dsl.Job
 
