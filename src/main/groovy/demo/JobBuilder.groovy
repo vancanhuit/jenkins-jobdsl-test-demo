@@ -5,7 +5,7 @@ import javaposse.jobdsl.dsl.Job
 class JobBuilder {
     private Job job
 
-    private JobBuilder(Job job) {
+    JobBuilder(Job job) {
         this.job = job
     }
 
